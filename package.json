@@ -6,11 +6,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.10.2",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "serverless-mysql": "^1.5.5"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "18.3.3",
+    "typescript": "5.5.3"
   }
 }
