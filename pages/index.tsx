@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import style from '@styles/index.module.scss'
 import {useEffect, useState} from "react";
 
