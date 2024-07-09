@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import style from '@styles/index.module.scss'
 import {useEffect, useState} from "react";
 
 export default function Home() {
@@ -21,21 +21,22 @@ export default function Home() {
     if (!data) return <p>No profile data</p>
 
     return (
-        <div className={styles.container}>
-            <Head>
-                <title>Create Next App</title>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
-
-            <div>
+            <main className={style.postList}>
+                {!isLoading && data.posts.length ?
                 <ul>
-                    {data.posts.map(post => (
-                        <li key={post.id}>{post.h1}</li>
+                    {data.posts.map(({id, h1, views}) => (
+                        <li key={id}>
+                            <a href={'post/' + id}>
+                                <p>ID: {id}</p>
+                                <h3>{h1}</h3>
+                                <p>Просмотров: {views}</p>
+                            </a>
+                        </li>
                     ))}
                 </ul>
-            </div>
+                : <h2>NO POSTS</h2>}
+            </main>
 
-        </div>
     );
 }
 
