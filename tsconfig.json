@@ -18,6 +18,9 @@
     "jsx": "preserve",
     "paths": {
       "@styles/*": ["styles/*"],
+      "@utilities/*": ["utilities/*"],
+      "@pages/*": ["pages/*"],
+      "@types/*": ["types/*"]
     }
   },
   "include": [
