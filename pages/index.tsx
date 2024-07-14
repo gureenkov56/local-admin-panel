@@ -5,6 +5,7 @@ export default function Home() {
 
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(true)
+    const [err, setErr] = useState(false)
 
     useEffect(() => {
         fetch('/api/posts')
@@ -14,14 +15,19 @@ export default function Home() {
                 setLoading(false)
                 console.log('data', data);
             })
+            .catch((err) => {
+                setErr(true)
+                console.error('Error', err);
+            })
     }, [])
 
     if (isLoading) return <p>Loading...</p>
     if (!data) return <p>No profile data</p>
+    if (err) return <p>Error</p>
 
     return (
             <main className={style.postList}>
-                {!isLoading && data.posts.length ?
+                {data.posts.length ?
                 <ul>
                     {data.posts.map(({id, h1, views}) => (
                         <li key={id}>

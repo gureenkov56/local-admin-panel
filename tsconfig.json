@@ -20,7 +20,8 @@
       "@styles/*": ["styles/*"],
       "@utilities/*": ["utilities/*"],
       "@pages/*": ["pages/*"],
-      "@types/*": ["types/*"]
+      "@types/*": ["types/*"],
+      "@enums/*": ["enums/*"]
     }
   },
   "include": [

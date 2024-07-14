@@ -1,0 +1,27 @@
+.post {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+
+  form {
+    margin-bottom: 10rem;
+    div {
+      label {
+        margin-top: 2rem;
+        display: block;
+        text-transform: uppercase;
+      }
+      input {
+        padding: .2rem .5rem;
+        margin-top: .5rem;
+        width: 100%;
+        font-size: 1.5rem;
+      }
+    }
+
+    button {
+      position: fixed;
+      bottom: 2rem;
+    }
+  }
+}

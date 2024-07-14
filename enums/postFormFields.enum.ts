@@ -1,0 +1,15 @@
+export enum PostDBFields {
+    h1='h1',
+    description='description',
+    SEO_title='SEO_title',
+    SEO_description='SEO_description',
+    category='category',
+    id='id',
+    likes='likes',
+    post_content='post_content',
+    pre_text='pre_text',
+    preview_img='preview_img',
+    pub_date='pub_date',
+    pub_status='pub_status',
+    views='views',
+}
