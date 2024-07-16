@@ -15,8 +15,19 @@
         padding: .2rem .5rem;
         margin-top: .5rem;
         width: 100%;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        outline: none;
       }
+      textarea {
+        width: 100%;
+        resize: vertical;
+      }
+
+
+    }
+
+    img {
+      margin-top: 2rem;
     }
 
     button {
