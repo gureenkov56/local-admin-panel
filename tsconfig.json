@@ -22,7 +22,8 @@
       "@pages/*": ["pages/*"],
       "@types/*": ["types/*"],
       "@enums/*": ["enums/*"],
-      "@configs/*": ["configs/*"]
+      "@configs/*": ["configs/*"],
+      "@components/*": ["components/*"]
     }
   },
   "include": [

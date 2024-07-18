@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {Post} from "@types/db";
 import style from '@styles/post.module.scss'
 import {PostDBFields} from "@enums/postFormFields.enum";
-import {fieldsConfigs} from "@configs/fieldsConfig";
+import {FormItems} from "@components/post/FormItems";
 
 export default function Page() {
     const {id} = useRouter().query
@@ -43,56 +43,11 @@ export default function Page() {
             .then(res => console.log('res', res))
     }
 
-    function getFormInput(field: string, data: string | number) {
-        return (
-            <div key={field}>
-                <label htmlFor={field}>{field}</label>
-                <div>
-                    <input
-                        id={field}
-                        name={field}
-                        type="text"
-                        defaultValue={data}
-                    />
-                </div>
-            </div>
-        )
-    }
 
-    function getFormTextarea(field: string, data: string | number) {
-        return(
-            <div key={field}>
-                <label htmlFor={field}>{field}</label>
-                <div>
-                    <textarea
 
-                        id={field}
-                        name={field}
-                        defaultValue={data}
-                        rows="5"
-                    />
-                </div>
-            </div>
-        )
-    }
 
-    function getFormItems(postData: Post) {
 
-        return Object.entries(fieldsConfigs)
-            .map(([key, value]) => {
 
-                    const data = postData[key]
-
-                    switch(value.tag) {
-                        case 'input':
-                            return getFormInput(key, data);
-                        case 'textarea':
-                            return getFormTextarea(key, data);
-                        default:
-                            return (<p>No block for this tag</p>)
-                    }
-        })
-    }
 
     if (isLoading) return <p>Loading...</p>
     if (!post) return <p>No profile data</p>
@@ -106,9 +61,9 @@ export default function Page() {
             </a>
             <p>Post ID: {id}</p>
             <form onSubmit={handleSubmit}>
-                {getFormItems(post)}
+                <FormItems postData={post} />
 
-                <img src={process.env.REACT_APP_BLOG + '/frontend/public/images/content/2/title-2.jpg'} width='200' alt="post-image"/>
+                {/*<img src={process.env.REACT_APP_BLOG + '/frontend/public/images/content/2/title-2.jpg'} width='200' alt="post-image"/>*/}
 
                 <button className={`button__green`} type="submit">
                     SAVE
