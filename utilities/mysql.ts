@@ -3,7 +3,7 @@ import * as dotenv from "dotenv";
 
 dotenv.config()
 
-const connection = await mysql.createConnection({
+const connection = await mysql.createPool({
     host: process.env.HOST,
     user: process.env.USER_DB,
     password: process.env.PASSWORD,

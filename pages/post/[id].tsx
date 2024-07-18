@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {Post} from "@types/db";
 import style from '@styles/post.module.scss'
 import {PostDBFields} from "@enums/postFormFields.enum";
-import {fieldsConfigs} from "../../configs/fieldsConfig";
+import {fieldsConfigs} from "@configs/fieldsConfig";
 
 export default function Page() {
     const {id} = useRouter().query
@@ -108,7 +108,7 @@ export default function Page() {
             <form onSubmit={handleSubmit}>
                 {getFormItems(post)}
 
-                <img src={process.env.BLOG + '/frontend/public/images/content/2/title-2.jpg'} width='200' alt="post-image"/>
+                <img src={process.env.REACT_APP_BLOG + '/frontend/public/images/content/2/title-2.jpg'} width='200' alt="post-image"/>
 
                 <button className={`button__green`} type="submit">
                     SAVE

@@ -21,7 +21,8 @@
       "@utilities/*": ["utilities/*"],
       "@pages/*": ["pages/*"],
       "@types/*": ["types/*"],
-      "@enums/*": ["enums/*"]
+      "@enums/*": ["enums/*"],
+      "@configs/*": ["configs/*"]
     }
   },
   "include": [

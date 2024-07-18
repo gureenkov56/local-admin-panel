@@ -22,7 +22,7 @@ export default function Home() {
     }, [])
 
     if (isLoading) return <p>Loading...</p>
-    if (!data) return <p>No profile data</p>
+    if (!data || !data.posts?.length) return <p>No profile data</p>
     if (err) return <p>Error</p>
 
     return (
